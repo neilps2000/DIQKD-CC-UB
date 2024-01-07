@@ -1,1 +1,1 @@
-The main scripts are qudit_CC_UB_maximally_entangled.m and qudit_CC_UB_maximally_violating.m, which allow us to calculate an upper bound on the key rate and the critical visibility when using the maximally entangled state and the maximally violating state respectively.
+The main script is qudit_CC_UB.m, which allows us to calculate an upper bound on the key rate and the critical visibility when using the maximally entangled state or the maximally violating (CGLMP) state
