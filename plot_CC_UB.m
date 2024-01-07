@@ -1,4 +1,4 @@
-function [] = plot_CC_UB(probNL,probL,mA,mB,d,x,y,Vrange)
+function [] = plot_CC_UB(probIdeal,probNL,probL,mA,mB,d,x,y,Vrange)
 
 % This function plots the key rate for a specified range of visibilities,
 % given an ideal noise-free probability vector
@@ -12,7 +12,7 @@ function [] = plot_CC_UB(probNL,probL,mA,mB,d,x,y,Vrange)
 % - Vrange: vector of visibilities for which the key rate is calculated
 
 % Calculate the observed probabilities for different visibilities
-probsMeasured = Vrange'*probNL+(1-Vrange')*[ones(1,(mA+mB)*(d-1))*1/d,...
+probsMeasured = Vrange'*probIdeal+(1-Vrange')*[ones(1,(mA+mB)*(d-1))*1/d,...
     ones(1,mA*mB*(d-1)^2)*1/(d^2)];
 
 % Find the local weight corresponding to each of the observed probabilities

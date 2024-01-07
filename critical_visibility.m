@@ -1,4 +1,4 @@
-function [critV,locWeight,out] = critical_visibility(probNL,...
+function [critV,locWeight,out] = Copy_of_critical_visibility(probIdeal,probNL,...
     probL,mA,mB,d,x,y,Vrange,tol)
 
 
@@ -31,7 +31,7 @@ maxIter = 100; % set the maximum number of iterations
 
 % Compute the observed probability vectors for the lower and upper bounds 
 % of Vrange
-probsMeasured = Vrange'*probNL+(1-Vrange')*[ones(1,(mA+mB)*(d-1))*1/d,...
+probsMeasured = Vrange'*probIdeal+(1-Vrange')*[ones(1,(mA+mB)*(d-1))*1/d,...
     ones(1,mA*mB*(d-1)^2)*1/(d^2)];
 
 % Call the maxLocWeights function to find the local weights for each 
@@ -49,7 +49,7 @@ else % if no error, proceed with the computation
         critV = mean(Vrange);
         % Compute the observed probability vector for the current estimate 
         % of critical visibility
-        probsMeasured = critV*probNL+(1-critV)*...
+        probsMeasured = critV*probIdeal+(1-critV)*...
             [ones(1,(mA+mB)*(d-1))*1/d,ones(1,mA*mB*(d-1)^2)*1/(d^2)];
         % Call the maxLocWeights function to find the local weight for the 
         % current observed probability vector
